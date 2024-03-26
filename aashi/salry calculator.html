@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <style>
+    .container {
+      border: 1px solid rgb(253, 253, 253);
+      height: 300px;
+      width: 400px;
+      margin-left: 500px;
+      margin-top: 200px;
+      justify-content: center;
+      background-color: transparent;
+      border-radius: 20% 5%;
+    }
+  </style>
+
+
+  <script>
+
+    function calculateSalary() {
+      var annualSalary = parseFloat(document.getElementById("salary").value);
+
+      if (isNaN(annualSalary) || annualSalary <= 0) {
+        document.getElementById("result").innerHTML = "Please enter a valid salary amount.";
+        return;
+      }
+
+      var monthlySalary = (annualSalary / 12).toFixed(2);
+      var weeklySalary = (annualSalary / 52).toFixed(2);
+      var dailySalary = (annualSalary / 365).toFixed(2);
+      var hourlySalary = (annualSalary / (365 * 24)).toFixed(2);
+
+      document.getElementById("result").innerHTML = `
+        <p>Annual Salary: ${annualSalary}</p>
+        <p>Weekly Salary: ${weeklySalary}</p>
+        <p>Monthly Salary: ${monthlySalary}</p>
+        <p>Daily Salary: ${dailySalary}</p>
+        
+        
+        <p>Hourly Salary:${hourlySalary}</p>
+   `;
+    }
+
+
+
+  </script>
+
+</head>
+
+<body
+  style="background-image: url(asset/pexels-nothing-ahead-8537021.jpg); background-size:1700px 800px; background-repeat: no-repeat; ">
+  <h1 style="color: rgb(247, 245, 245);"><span style="color: red;">S</span>alary <span
+      style="color: red;">C</span>alculator<span style="color: red;">!</span></h1>
+  <div class="container">
+    <input type="number" id="salary"
+      style="margin-left: 60px; margin-top: 20px; border-radius: 30% 10%; width: 300px; height: 30px; background-color: transparent; color: white;">
+    <button onclick="calculateSalary()" id="find"
+      style="border-radius: 25% 10%; margin-left: 200px; margin-top: 20px; background-color: red; color: antiquewhite;">
+      find </button>
+    <p id="result" style="color: white;"></p>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right,rgb(227, 127, 12), rgb(240, 16, 180));
+}
+
+.container {
+    width: 20rem;
+    margin: 1rem;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: #020202;
+}
+
+.container h2 {
+    margin-bottom: 2rem;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container form label {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.container form input {
+    width: 16rem;
+    outline: none;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+    border: 1px solid rgb(8, 8, 8);
+    border-radius: 20px;
+    
+}
+
+button {
+    border: none;
+    color: #fffefe;
+    margin: 1rem 0;
+    font-size: 18px;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius:5rem;
+    background: linear-gradient(to right, rgba(250, 151, 2, 0.719), rgb(255, 0, 119));
+    align-self: center;
+    
+}
+.div button{
+    border: none;
+    color: #fffefe;
+    margin: 2rem 0;
+    font-size: 18px;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius:5rem;
+    background: linear-gradient(to right, rgba(250, 151, 2, 0.719), rgb(255, 0, 119));
+    align-self: center;
+
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+p a {
+    text-decoration:none ;
+}
+.container2 {
+    width: 20rem;
+    margin: 2rem;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: #020202;
+}
+.container2 label{
+    width: 90%;
+    margin: 3px;
+
+}
+.container2 input{
+    width: 9rem;
+    outline: none;
+    padding: 9px 16px;
+    margin-bottom: 2px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+
+
+
+
+    
+

@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+
+
+    <style>
+           
+          .container{
+            display: grid;
+            grid-template-columns: auto;
+            
+            border: 1px solid rgb(255, 255, 253);
+            background-image: url(asset/3418448.jpg);
+            opacity: 0.7;
+          
+            height: 400px;
+            width: 500px;
+            justify-content: center;
+            align-items: center;
+            margin: 100px ;
+            margin-left: 530px;
+            color: antiquewhite;
+            border-radius: 20px;
+            box-shadow: 10px 11px 10px 10px white;
+             }
+
+
+             .container:hover{
+                scale: 1.1;
+            } 
+            
+
+          input{
+            display: grid;
+            grid-template-columns: auto;
+            border: 1px solid yellow;
+            border-radius: 8px;
+            justify-items: center;
+            color: antiquewhite;
+            background-color: transparent;
+            height: 40px;
+            width: 180px;
+            font-size: large;
+            grid-column-start: 1;
+            grid-column-end: 3;
+          }
+
+
+          input:hover{
+            transform: scale(1.1);
+          }
+
+
+          button{
+            border: 1px solid yellow;
+            border-radius: 8px;
+            justify-content: center;
+            align-items: center;
+            color: antiquewhite;
+            background-color: transparent;
+            height: 30px;
+            width: 80px;
+            font-size: large;
+            margin-left: 5px;
+            margin-top: 10px;
+              }
+
+
+          button:hover{
+            transform: scale(1.1);
+                      }
+         
+                      body{
+            background-image: url(asset/3418448.jpg);
+            background-size: cover;
+            color: antiquewhite;
+              }
+         
+              h1{
+            margin-top: 0px;
+            }
+          
+         
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+        <h1><span style="color: red;">F</span>ind Your age!! <br> <span style="color: red;" >Calculate</span></h1>
+           <div class="input-box">
+             <input type="date" id="date">
+               <button onclick="calculateAge()">Find</button>
+            
+              </div>
+              <p id="result"></p>
+
+            </div>
+             </div>
+    <script>
+        let userInput = document.getElementById("date");
+          userInput.max = new Date().toISOString().split("T")[0];
+             let result = document.getElementById("result");
+                let reset=document.getElementById("reset");
+
+             
+
+        function calculateAge(){
+            let birthDate = new Date(userInput.value);
+
+     let d1 = birthDate.getDate();
+        let m1 = birthDate.getMonth() + 1;
+          let y1 = birthDate.getFullYear();
+
+             let today = new Date();
+
+          let d2 = today.getDate();
+             let m2 = today.getMonth() + 1;
+                 let y2 = today.getFullYear();
+
+            let d3, m3, y3;
+
+            y3 = y2 - y1;
+
+
+          if(m2 >= m1){
+                m3 = m2 - m1;
+            }
+           else{
+                y3--;
+                m3 = 12 + m2 - m1;
+            }
+
+          if(d2 >= d1){
+                d3 = d2 - d1;
+            }
+          else{
+                m3--;
+                d3 = getDaysInMonth(y1, m1) + d2 - d1;
+            }
+          if(m3 < 0)
+            {
+                m3 = 11;
+                y3--;
+            }
+
+
+            result.innerHTML = `Hey!! You are <span>${y3}</span> years, <span>${m3}</span> months, <span>${d3}</span> days old.`;
+            
+        
+        }
+
+         function getDaysInMonth(year, month){
+        return new Date(year, month, 0).getDate();
+
+       
+   }
+
+   
+    </script>
+</body>
+</html>

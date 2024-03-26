@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <script>
+        function calculate() {
+            var PA = parseFloat(document.getElementById("amount").value)
+            var ROI = parseFloat(document.getElementById("intrest").value)
+            var NOM = parseFloat(document.getElementById("time").value)
+            var ROFI = ROI / (12 * 100);
+            var NOFM = NOM * 12;
+            var EMI = PA * ROFI * Math.pow(1 + ROFI, NOFM) / (Math.pow(1 + ROFI, NOFM) - 1);
+            var result = document.getElementById("result")
+            result.innerHTML = "your monthly EMI is " + EMI.toFixed(2);
+        }
+    </script>
+    <style>
+        body{
+            background-image: url(asset/pexels-min-an-1353938.jpg);
+            background-size: cover;
+            
+        }
+        .container {
+            
+            justify-content: center;
+            margin-left: 600px;
+            margin-top: 200px;
+            height: 200px;
+            width:300px;
+        }
+        
+        #amount{
+            margin-left: 80px;
+            margin-top: 20px;
+            width: 270px;
+            height: 40px;
+        }
+        #intrest{
+            margin-left: 80px;
+            margin-top: 20px;
+            width: 270px;
+            height: 40px;
+        }
+        #time{
+            margin-left: 80px;
+            margin-top: 20px;
+            width: 270px;
+            height: 40px;
+        }
+        button{
+            margin-left: 80px;
+            margin-top: 20px;
+            width: 270px;
+            height: 40px;
+        }
+        #result{
+            margin-left: 720px;
+            margin-top: 60px;
+            width: 270px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <h1><span style="color: red;">EMI</span>calculator</h1>
+    <div class="container">
+        <input type="number" id="amount" placeholder="enter the amount">
+        <input type="number" id="intrest" placeholder="enter the intrest rate">
+        <input type="number" id="time" placeholder=" enter the time period ">
+        <button onclick="calculate()">find</button>
+    </div>
+    <div id="result"></div>
+</body>
+
+</html>

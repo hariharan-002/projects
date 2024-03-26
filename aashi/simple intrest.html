@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <script>
+               function calculateInterest() {
+    var principal = parseFloat(document.getElementById("principal").value);
+    var rate = parseFloat(document.getElementById("rate").value);
+    var time = parseFloat(document.getElementById("time").value);
+
+    var interest = (principal * rate * time) / 100;
+    var totalAmount = principal + interest;
+
+    var resultElement = document.getElementById("result");
+    resultElement.innerHTML = "Simple Interest: $" + interest.toFixed(2) + "<br>Total Amount: $" + totalAmount.toFixed(2);
+}
+
+        </script>
+        <style>
+            .container{
+                border: 1px solid black;
+                border-radius: 10px;
+                justify-content: center;
+                height: 390px;
+                width: 450px;
+                background-color: rgb(7, 7, 7);
+                margin-left: 550px;
+                margin-top: 200px;
+                opacity: 0.7;
+                
+                }
+                body{
+                     background-image: url(asset/pexels-pixabay-256514.jpg);
+                     background-size: cover;
+                }
+                .button{
+                    padding: 10px;
+                    gap: 10px;
+                    width: 100px;
+                }
+               
+        </style>
+    </head>
+
+    <body>
+       
+    <div class="container" style="filter: blur(50%);">
+        <h1 style="color: antiquewhite; margin-left: 50px;"><span style="color: red;">s</span>imple Interest Calculator</h1>
+        <div class="input-group" style="justify-content: center; padding: 10px; gap: 10px; color: antiquewhite; background-color: transparent;">
+            <label for="principal">Principal Amount:</label>
+            <input type="number" id="principal" placeholder="Enter Principal Amount"  style="background-color: transparent; border-radius: 10px; color: antiquewhite;">
+        </div>
+        <div class="input-group" style="justify-content: center; padding: 10px; gap: 10px; color: antiquewhite; background-color: transparent; ">
+            <label for="rate">Annual Interest Rate (%):</label>
+            <input type="number" id="rate" placeholder="Enter Annual Interest Rate"  style="background-color: transparent; border-radius: 10px; color: antiquewhite;">
+        </div>
+        <div class="input-group" style="justify-content: center; padding: 10px; gap: 10px; color: antiquewhite; background-color: transparent; ">
+            <label for="time">Time Period (in years):</label>
+            <input type="number" id="time" placeholder="Enter Time Period" style="background-color: transparent; border-radius: 10px; color: antiquewhite;">
+        </div>
+        <button onclick="calculateInterest()" style="padding: 10px; gap: 10px; width: 300px;  margin-left: 70px; margin-top: 30px; color: antiquewhite; background-color: transparent;">Calculate</button>
+        <div id="result" style="color: white; margin-left: 70px; margin-top: 30px;"></div>
+    </div>
+   
+
+        
+    </body>
+    </html>

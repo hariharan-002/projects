@@ -1,0 +1,96 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <script>
+
+        function calculate() {
+            var height = parseFloat(document.getElementById("height").value);
+            var weight = parseFloat(document.getElementById("weight").value);
+            var BMI = weight / (height / 100) ** 2;
+
+            var result = document.getElementById("result");
+            result.innerHTML = ("your bmi is -" + BMI.toFixed(2));
+        }
+    </script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(asset/pexels-bess-hamiti-36487.jpg);
+            background-size: cover;
+
+        }
+
+        .container {
+            border: 1px solid white;
+            background-color: black;
+            height: 300px;
+            width: 300px;
+            color: antiquewhite;
+            z-index: -100px;
+            filter: drop-shadow(10px 20px 10px white);
+            filter: opacity(0.8);
+            border-radius: 20px;
+
+        }
+
+        #height {
+            width: 270px;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 15px;
+        }
+
+        #weight {
+            width: 270px;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 15px;
+        }
+
+        .container button {
+            width: 270px;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 15px;
+            background-color: red;
+            color: antiquewhite;
+        }
+
+        #result {
+            color: white;
+            margin-top: 20px;
+            margin-left: 15px;
+        }
+
+        .h1 {
+            margin-top: 10px;
+            margin-left: 15px;
+            color: white;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class=" container ">
+        <div class="content">
+            <h1>BMI Calculator</h1>
+            <input type="number" placeholder="enter the weight " id="weight">
+            <input type="number" placeholder="enter the height" id="height">
+            <button onclick="calculate()"> Calculate BMI</button>
+            <div id="result"></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
